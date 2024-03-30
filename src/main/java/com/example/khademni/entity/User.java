@@ -3,22 +3,21 @@ package com.example.khademni.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idUser;
     private String nomUtilisateur;
     private String motDePasse;
     private String email;
