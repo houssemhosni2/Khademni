@@ -50,5 +50,12 @@ public class ReclamationServices implements IReclamationServices {
         }
         return null; // Or handle error appropriately
     }
+
+
+
+    public List<Reclamation> getReclamationsByUser(Long idUser) {
+        System.out.println("idUser"+idUser);
+        return ireclamationRepository.getReclamationByUsername(idUser);
     }
+}
 

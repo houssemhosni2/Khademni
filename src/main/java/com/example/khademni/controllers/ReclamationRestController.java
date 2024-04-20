@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/reclamation")
 @AllArgsConstructor
 @RestController
@@ -14,34 +14,42 @@ public class ReclamationRestController {
 
     private IReclamationServices iReclamationServices;
 
-    @PostMapping("/add")
+    @PostMapping("/addRec")
     public Reclamation addReclamation(@RequestBody Reclamation reclamation) {
         return iReclamationServices.addReclamation(reclamation);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/updateRec")
     public Reclamation updateReclamation(@RequestBody Reclamation reclamation) {
         return iReclamationServices.updateReclamation(reclamation);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteRec/{idRec}")
     public void deleteReclamation(@PathVariable Long idRec) {
         iReclamationServices.deleteReclamation(idRec);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/getRec/{idRec}")
     public Reclamation getIReclamation(@PathVariable Long idRec) {
         return iReclamationServices.getById(idRec);
     }
 
-    @GetMapping("/all")
+
+    @GetMapping("/allRec")
     public List<Reclamation> getAllReclamations() {
         return iReclamationServices.getAll();
     }
 
-    @PostMapping("/assignToUser/{idUser}")
+    @PostMapping("/addRecUser/{idUser}")
     public Reclamation assignToUser(@PathVariable Long idUser, @RequestBody Reclamation reclamation) {
         Reclamation createdReclamation = iReclamationServices.addReclamationAndAssignToUser(reclamation, idUser);
         return createdReclamation;
+    }
+
+    @GetMapping("/getreclamationparuser/{idUser}")
+    public List<Reclamation> getReclamationsByUser(@PathVariable Long idUser) {
+
+        System.out.println("User ID : "+idUser);
+        return iReclamationServices.getReclamationsByUser(idUser);
     }
 }

@@ -1,8 +1,12 @@
 package com.example.khademni.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.io.Serializable;
+import java.util.List;
 
 
 @Getter
@@ -11,7 +15,7 @@ import lombok.experimental.FieldDefaults;
 @ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-public class Reclamation {
+public class Reclamation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idRec;
@@ -20,5 +24,9 @@ public class Reclamation {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "reclamation")
+    private List<Response> responses;
 }

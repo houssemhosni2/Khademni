@@ -17,4 +17,5 @@ public interface IReclamationServices {
 
     Reclamation addReclamationAndAssignToUser(Reclamation reclamation, Long idUser);
 
+    List<Reclamation> getReclamationsByUser(Long idRec);
 }
