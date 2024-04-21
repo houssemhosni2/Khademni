@@ -1,0 +1,42 @@
+<h2>Liste des compétences :</h2>
+<ul class="list-group">
+  <li  class="list-group-item list-group-item-action" *ngFor="let competence of competences">
+    <p><strong>Nom :</strong> {{ competence.nom }}</p>
+    <p><strong>Description :</strong> {{ competence.description }}</p>
+  </li>
+</ul>
+
+<button type="button" class="btn btn-primary">Add </button>
+<table class="table table-primary table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>@mdo</td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>@fat</td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td colspan="2">Larry the Bird</td>
+    <td>@twitter</td>
+  </tr>
+  </tbody>
+</table>
+<tr *ngFor="let user of users">
+  <td>{{ user.id }}</td>
+  <td>{{ user.name }}</td>
+  <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
+</tr>
