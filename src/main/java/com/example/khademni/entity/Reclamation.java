@@ -24,9 +24,8 @@ public class Reclamation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonIgnore
     private User user;
-
+/*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "reclamation")
-    private List<Response> responses;
+    private List<Response> responses;*/
 }

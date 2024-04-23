@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IReclamationServices {
 
-    Reclamation addReclamation(Reclamation reclamation);
+    Reclamation addReclamation(Reclamation reclamation,Long idUser);
 
     Reclamation updateReclamation(Reclamation reclamation);
 
@@ -14,8 +14,8 @@ public interface IReclamationServices {
 
     Reclamation getById(Long idRec);
     List<Reclamation> getAll();
-
+/*
     Reclamation addReclamationAndAssignToUser(Reclamation reclamation, Long idUser);
 
-    List<Reclamation> getReclamationsByUser(Long idRec);
+    List<Reclamation> getReclamationsByUser(Long idRec);*/
 }

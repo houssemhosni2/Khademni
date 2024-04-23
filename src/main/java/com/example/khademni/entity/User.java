@@ -28,16 +28,16 @@ public class User {
     private String nomEntreprise;
     private String adresseEntreprise;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Evaluation> evaluations;
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    // private List<Evaluation> evaluations;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Evenement> evenements;
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    //private List<Evenement> evenements;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Reclamation> reclamations;
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    // private List<Reclamation> reclamations;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Paiement> paiements;
+    //@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    //private List<Paiement> paiements;
 
 }

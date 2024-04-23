@@ -26,9 +26,9 @@ public class Response implements Serializable {
     //@Size(max=4000 , message="The total number of characters cannot be exceeded")
     private String description;
 
-    @ManyToOne
-    @JsonIgnore
-    Reclamation reclamation;
+   // @ManyToOne
+    //@JsonIgnore
+   // Reclamation reclamation;
 
 
 }

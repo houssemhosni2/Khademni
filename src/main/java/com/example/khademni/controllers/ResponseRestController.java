@@ -6,13 +6,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RequestMapping("/response")
 @AllArgsConstructor
 @RestController
 public class ResponseRestController {
-
+/*
     ResponseServices responseService;
 
 
@@ -45,9 +46,10 @@ public class ResponseRestController {
         responseService.updateResponse(r,idResponse);
     }
 
-    @PutMapping("/getResponsesByReclamation/{idRec}")
+    /*@PutMapping("/getResponsesByReclamation/{idRec}")
     @ResponseBody
     public List<Response> getResponsesByReclamation(@PathVariable("idRec") Long idRec){
         return responseService.getResponsesByReclamation(idRec);
-    }
+    }*/
+
 }

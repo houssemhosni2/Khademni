@@ -16,8 +16,12 @@ public class ReclamationServices implements IReclamationServices {
 
     private final IReclamationRepository ireclamationRepository;
     private final IUserReposetory iUserReposetory;
+
     @Override
-    public Reclamation addReclamation(Reclamation reclamation) {
+    public Reclamation addReclamation(Reclamation reclamation, Long userId) {
+        User user = iUserReposetory.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("User with id " + userId + " not found"));
+        reclamation.setUser(user);
         return ireclamationRepository.save(reclamation);
     }
 
@@ -33,29 +37,12 @@ public class ReclamationServices implements IReclamationServices {
 
     @Override
     public Reclamation getById(Long idRec) {
-        return ireclamationRepository.findById(idRec).get();
+        return ireclamationRepository.findById(idRec)
+                .orElseThrow(() -> new EntityNotFoundException("Reclamation with id " + idRec + " not found"));
     }
 
     @Override
     public List<Reclamation> getAll() {
         return (List<Reclamation>) ireclamationRepository.findAll();
     }
-
-    @Override
-    public Reclamation addReclamationAndAssignToUser(Reclamation reclamation, Long idUser) {
-        User user = iUserReposetory.findById(idUser).orElse(null);
-        if (user != null) {
-            reclamation.setUser(user);
-            return ireclamationRepository.save(reclamation);
-        }
-        return null; // Or handle error appropriately
-    }
-
-
-
-    public List<Reclamation> getReclamationsByUser(Long idUser) {
-        System.out.println("idUser"+idUser);
-        return ireclamationRepository.getReclamationByUsername(idUser);
-    }
 }
-

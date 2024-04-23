@@ -5,7 +5,7 @@ import com.example.khademni.entity.Response;
 import java.util.List;
 
 public interface IResponseServices {
-
+/*
     void addResponse(Response response, Long idRec);
 
     void updateResponse(Response response, Long idResponse);
@@ -15,5 +15,5 @@ public interface IResponseServices {
     Response getById(Long idResponse);
     List<Response> getAll();
 
-    List<Response> getResponsesByReclamation(Long idRec);
+    //List<Response> getResponsesByReclamation(Long idRec);*/
 }

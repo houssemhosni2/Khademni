@@ -17,7 +17,7 @@ public class ResponseServices implements IResponseServices{
     private final IResponseRepository iResponseRepository;
 
     private final IReclamationRepository iReclamationRepository;
-
+/*
     @Override
     public void addResponse(Response response, Long idRec) {
         Reclamation r = iReclamationRepository.findById(idRec).orElse(null);
@@ -52,10 +52,11 @@ public class ResponseServices implements IResponseServices{
     public List<Response> getAll() {
         return (List<Response>) iResponseRepository.findAll();
     }
-
+/*
     @Override
     public List<Response> getResponsesByReclamation(Long idRec) {
         Reclamation rec = iReclamationRepository.findById(idRec).orElse(null);
         return rec.getResponses();
-    }
+    }*/
+
 }
