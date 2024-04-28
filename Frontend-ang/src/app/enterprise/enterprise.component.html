@@ -1,0 +1,16 @@
+<!-- Afficher les entreprises -->
+<div *ngFor="let enterprise of enterprises">
+  <h2>{{ enterprise.nom }}</h2>
+  <p>{{ enterprise.desc }}</p>
+  <p>{{ enterprise.headquarter }}</p>
+</div>
+
+<!-- Formulaire d'ajout d'une entreprise
+<form (submit)="addEnterprise(newEnterprise)">
+  <input type="text" [(ngModel)]="newEnterprise.nom" placeholder="Nom de l'entreprise" required>
+  <input type="text" [(ngModel)]="newEnterprise.desc" placeholder="Description de l'entreprise">
+  <input type="text" [(ngModel)]="newEnterprise.headquarter" placeholder="Siège social de l'entreprise">
+  <button type="submit">Ajouter</button>
+</form>
+
+-->
